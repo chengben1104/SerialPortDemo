@@ -1,0 +1,16 @@
+{
+  "dependencies": [
+    "spdlog",
+    "asio",
+    "nlohmann-json",
+    "stduuid",
+    "registration2d",
+    "registration3d",
+    {
+      "name" : "opencv4",
+      "default-features": false,
+      "features" : [ "world", "ffmpeg", "fs", "jpeg", "png", "tiff" ]
+    },
+    "octrecon"
+  ]
+}

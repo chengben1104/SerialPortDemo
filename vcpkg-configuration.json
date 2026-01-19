@@ -1,0 +1,40 @@
+{
+  "default-registry": {
+    "kind": "git",
+    "baseline": "26abb5b33f976246a5f2cdc45cdd073d51caff06",
+    "repository": "https://gitee.com/jackboosy/vcpkg.git"
+  },
+  "registries": [
+    {
+      "kind": "artifact",
+      "location": "https://github.com/microsoft/vcpkg-ce-catalog/archive/refs/heads/main.zip",
+      "name": "microsoft"
+    },
+    {
+      "kind": "git",
+      "baseline": "9dc99c0ff06a6c130c635bf9b7f1e08d400cf5dc",
+      "reference": "main",
+      "repository": "http://10.0.10.252:8080/robotrak/vcpkg-registry",
+      "packages": [
+        "anteriorrefactive",
+        "cornealquantization"
+      ]
+    },
+    {
+      "kind": "git",
+      "baseline": "a3ccebd6a53c2d4b1c245182e24334feb42514d8",
+      "reference": "main",
+      "repository": "http://10.0.10.252:8080/robotrak/binary/bin-registry",
+      "packages": [
+        "manualseg",
+        "octrecon",
+        "saris-ai",
+        "ncc",
+        "registration2d",
+        "registration3d",
+        "vtk",
+        "octaanalysis"
+      ]
+    }
+  ]
+}

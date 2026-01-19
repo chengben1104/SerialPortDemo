@@ -1,20 +1,53 @@
-Release/
+**/.vs/
+**/.vscode/
+**/debug/
+**/release/
+**/x64
+**/log/
+**/*.aps
+**/*.vcxproj.user
+**/*.qtvscr
+./config/
+**/logs/
+**/*.db
+**/vcpkg_installed/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.filters
+*.vcxproj.user
+
+# Build output
 Debug/
+Release/
 x64/
 build/
-vcpkg_installed/
-.vs/
-.vscode/
-saris/saris.vcxproj.user
-saris/tests.vcxproj.user
-client/client.vcxproj.user
-demo/demo.vcxproj.user
-client/config/
-demo/config/
-saris/config/
-client/logs/
-demo/logs/
-saris/logs/
-client/saris.db
-demo/saris.db
-saris/saris.db
+out/
+
+# Object files
+*.obj
+*.o
+*.ilk
+*.pdb
+*.idb
+*.exe
+*.dll
+*.lib
+
+# Qt generated
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+.qt/
+.qmake.stash
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Logs
+*.log
