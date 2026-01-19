@@ -24,7 +24,7 @@ SerialPort::SerialPort(const std::string& com, SerialPortReceiver* rcv)
 {
     using asio::serial_port_base;
 
-    serial.set_option(serial_port_base::baud_rate(115200));
+    serial.set_option(serial_port_base::baud_rate(9600));
     serial.set_option(serial_port_base::character_size(8));
     serial.set_option(serial_port_base::parity(serial_port_base::parity::none));
     serial.set_option(

@@ -15,8 +15,15 @@ namespace saris::control {
 
 void ConsoleReceiver::onDataReceived(std::span<const uint8_t> data)
 {
-    std::string s(data.begin(), data.end());
-    std::cout << "recv: " << s << std::endl;
+    buffer.append(reinterpret_cast<const char*>(data.data()), data.size());
+    //std::cout << "recv: " << buffer << std::endl;
+
+    std::size_t pos;
+    while ((pos = buffer.find('\r')) != std::string::npos) {
+        std::string line = buffer.substr(0, pos);
+        buffer.erase(0, pos + 1);
+        std::cout << "recv: " << line << std::endl;
+    }
 }
 
 } // namespace saris::control
