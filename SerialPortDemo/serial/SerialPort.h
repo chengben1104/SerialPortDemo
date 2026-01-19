@@ -21,7 +21,7 @@
 namespace saris::control {
 
 struct SerialPortReceiver {
-    virtual void onDataReceived(std::span<uint8_t>) = 0;
+    virtual void onDataReceived(std::span<const uint8_t>) = 0;
 };
 
 class SerialPort {

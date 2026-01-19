@@ -43,9 +43,15 @@
     <ClCompile Include="serial\SerialPort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="serial\ConsoleReceiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="serial\SerialPort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="serial\ConsoleReceiver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
