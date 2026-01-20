@@ -117,8 +117,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="serial\ConsoleReceiver.cpp" />
     <ClCompile Include="serial\SerialPort.cpp" />
+    <ClCompile Include="serial\Spectrometer.cpp" />
+    <ClCompile Include="serial\Utils.cpp" />
     <QtRcc Include="Client.qrc" />
     <QtUic Include="Client.ui" />
     <QtMoc Include="Client.h" />
@@ -126,8 +127,10 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="serial\ConsoleReceiver.h" />
     <ClInclude Include="serial\SerialPort.h" />
+    <ClInclude Include="serial\SerialPortCmd.h" />
+    <ClInclude Include="serial\Spectrometer.h" />
+    <QtMoc Include="serial\Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

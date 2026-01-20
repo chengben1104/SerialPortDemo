@@ -1,23 +1,30 @@
 #include "Client.h"
 #include <QtWidgets/QApplication>
-#include "serial/ConsoleReceiver.h"
+#include "serial/Spectrometer.h"
 #include "serial/SerialPort.h"
 #include "iostream"
+#include "serial/SerialPortCmd.h"
 
 int main(int argc, char* argv[])
 {
-    saris::control::ConsoleReceiver receiver;
+    using namespace ao::SerialPort;
 
-    // 程序打开 COM15，串口工具打开 COM16
     try {
-        saris::control::SerialPort port("COM15", &receiver);
+        Spectrometer spectrometer("COM15");
         std::cout << "Serial port opened\n";
 
         while (true) {
             std::this_thread::sleep_for(std::chrono::seconds(1));
-            const char* cmd = "r tper\r\n";
-            port.write(std::span<const uint8_t>(
-                reinterpret_cast<const uint8_t*>(cmd), strlen(cmd)));
+            auto value = spectrometer.writeCmd(SerialPortCmd::RO_SensorWidth);
+            std::cout << "readCmd: "
+                      << (value.has_value() ? value.value() : -10000)
+                      << std::endl;
+
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::cout << "writeCmd: "
+                      << spectrometer.writeCmd(
+                             SerialPortCmd::RW_OutputFrequency, 1)
+                      << std::endl;
 
             std::this_thread::sleep_for(std::chrono::seconds(1));
         }

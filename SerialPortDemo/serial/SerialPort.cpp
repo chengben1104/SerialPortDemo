@@ -17,7 +17,7 @@ constexpr size_t buffer_size{ 1024 };
 
 } // namespace
 
-namespace saris::control {
+namespace ao::SerialPort {
 
 SerialPort::SerialPort(const std::string& com, SerialPortReceiver* rcv)
     : serial(io, com), received(buffer_size), receiver(rcv)
@@ -68,4 +68,4 @@ void SerialPort::write(std::span<const uint8_t> msg)
         });
 }
 
-} // namespace saris::control
+} // namespace ao::SerialPort

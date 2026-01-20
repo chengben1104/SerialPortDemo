@@ -18,7 +18,7 @@
 #include <thread>
 #include <asio.hpp>
 
-namespace saris::control {
+namespace ao::SerialPort {
 
 struct SerialPortReceiver {
     virtual void onDataReceived(std::span<const uint8_t>) = 0;
@@ -40,4 +40,4 @@ private:
     void startRead();
 };
 
-} // namespace saris::control
+} // namespace ao::SerialPort
