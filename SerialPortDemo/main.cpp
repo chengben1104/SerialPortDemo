@@ -13,20 +13,20 @@ int main(int argc, char* argv[])
         Spectrometer spectrometer("COM15");
         std::cout << "Serial port opened\n";
 
+        std::cout << std::boolalpha;
+
         while (true) {
-            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             auto value = spectrometer.writeCmd(SerialPortCmd::RO_SensorWidth);
             std::cout << "readCmd: "
                       << (value.has_value() ? value.value() : -10000)
                       << std::endl;
 
-            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::this_thread::sleep_for(std::chrono::seconds(2));
             std::cout << "writeCmd: "
                       << spectrometer.writeCmd(
                              SerialPortCmd::RW_OutputFrequency, 1)
                       << std::endl;
-
-            std::this_thread::sleep_for(std::chrono::seconds(1));
         }
     }
     catch (const asio::system_error& e) {

@@ -109,7 +109,7 @@ std::string cmd2String(SerialPortCmd cmd, std::optional<int> value)
 {
     if (value.has_value()) {
         return std::format(
-            "{}{}{}{}{}",
+            "{}{}{}{}{}{}",
             "w",
             " ",
             cmdToString(cmd),

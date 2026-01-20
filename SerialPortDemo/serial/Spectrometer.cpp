@@ -47,7 +47,7 @@ std::optional<int> parseIntBeforeSlash(const std::string_view& stream)
 
     // 1. 手动遍历，找第一个 '/'
     std::size_t pos = 0;
-    while (pos < stream.size() && stream[pos] != '/') {
+    while (pos < stream.size() && stream[pos] != '\r') {
         ++pos;
     }
 
@@ -136,6 +136,7 @@ void Spectrometer::onDataReceived(std::span<const uint8_t> data)
 {
     {
         std::lock_guard lock{ mtx };
+        buffer.clear();
         buffer.append(reinterpret_cast<const char*>(data.data()), data.size());
         // spdlog::info("recv: {}", buffer);
     }
