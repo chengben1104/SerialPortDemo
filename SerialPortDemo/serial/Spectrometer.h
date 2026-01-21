@@ -16,8 +16,8 @@ public:
     explicit Spectrometer(const std::string& com);
     ~Spectrometer();
 
-    std::optional<int> writeCmd(SerialPortCmd cmd);
-    bool writeCmd(SerialPortCmd cmd, int value);
+    std::optional<int> read(SerialPortCmd cmd);
+    bool write(SerialPortCmd cmd, int value);
 
 private:
     std::mutex mtx;

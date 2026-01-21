@@ -2,7 +2,7 @@
  * @Author: ben.cheng(ben.cheng@Robotrak.cn)
  * @Date: 2026-01-19 13:14:23
  * @LastEditors: ben.cheng(ben.cheng@Robotrak.cn)
- * @LastEditTime: 2026-01-20 16:32:51
+ * @LastEditTime: 2026-01-21 15:58:42
  * @FilePath: \SerialPortDemo\SerialPortDemo\serial\Spectrometer.cpp
  * @Description:
  *
@@ -84,7 +84,7 @@ Spectrometer::~Spectrometer()
     cv.notify_all();
 }
 
-std::optional<int> Spectrometer::writeCmd(SerialPortCmd cmd)
+std::optional<int> Spectrometer::read(SerialPortCmd cmd)
 {
     std::unique_lock lk(mtx);
 
@@ -108,7 +108,7 @@ std::optional<int> Spectrometer::writeCmd(SerialPortCmd cmd)
     return readResult;
 }
 
-bool Spectrometer::writeCmd(SerialPortCmd cmd, int value)
+bool Spectrometer::write(SerialPortCmd cmd, int value)
 {
     std::unique_lock lk(mtx);
 
