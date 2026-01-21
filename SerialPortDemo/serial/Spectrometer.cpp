@@ -15,7 +15,7 @@
 
 namespace {
 
-constexpr auto timeout = std::chrono::milliseconds(500);
+constexpr auto timeout = std::chrono::milliseconds(2000);
 
 bool isSuccessCmd(const std::string_view& stream)
 {
