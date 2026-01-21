@@ -5,7 +5,7 @@ namespace {
 
 using namespace ao::SerialPort;
 
-std::string cmdToString(SerialPortCmd cmd)
+static std::string cmdToString(SerialPortCmd cmd)
 {
     switch (cmd) {
     // Image controls
@@ -109,16 +109,10 @@ std::string cmd2String(SerialPortCmd cmd, std::optional<int> value)
 {
     if (value.has_value()) {
         return std::format(
-            "{}{}{}{}{}{}",
-            "w",
-            " ",
-            cmdToString(cmd),
-            " ",
-            std::to_string(value.value()),
-            "\r");
+            "w {} {}\r", cmdToString(cmd), std::to_string(value.value()));
     }
 
-    return std::format("{}{}{}{}", "r", " ", cmdToString(cmd), "\r");
+    return std::format("r {}\r", cmdToString(cmd));
 }
 
 } // namespace ao::SerialPort

@@ -60,10 +60,8 @@
     <ClInclude Include="serial\Spectrometer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="serial\Utils.h">
+    <ClInclude Include="serial\Utils.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
+    </ClInclude>
   </ItemGroup>
 </Project>
